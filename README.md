@@ -16,12 +16,12 @@
 
 ### Table of Contents
 **[Project Introduction](#project-introduction)**<br>
-* Design
-* Implementation
-* Final Product
-* Challenges/issues
-* Conclusion
-* Works Cited
+* [Design](#design)
+* [Implementation](#implementation)
+* [Final Product](#final-product)
+* [Challenges/issues](#challenges/issues)
+* [Conclusion](#conclusion)
+* [Works Cited](#works-cited)
 
 ## Project Introduction
 ## Design

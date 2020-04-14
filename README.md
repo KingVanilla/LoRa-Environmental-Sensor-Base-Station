@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="2500" height="115" src="/images/Miami%20Header.jpg">
+  <img width="2500" height="120" src="/images/Miami%20Header.jpg">
 </p>
 
 # ECE387 Project 2 Report - Spring 2020

@@ -9,7 +9,7 @@
 <br>
 
 <p align="center">
-  <img width="292" height="436" src="https://github.com/KingVanilla/LoRa-Environmental-Sensor-Base-Station/blob/master/images/Cover%20header.jpg">
+  <img width="292" height="436" src="https://github.com/KingVanilla/LoRa-Environmental-Sensor-Base-Station/blob/master/images/Cover%20header.jpg?raw=true">
 </p>
 
 

@@ -14,14 +14,14 @@
 
 
 
-### Table of Contents
+## Table of Contents
 **[Project Introduction](#project-introduction)**<br>
-* [Design](#design)
-* [Implementation](#implementation)
-* [Final Product](#final-product)
-* [Challenges/issues](#challenges/issues)
-* [Conclusion](#conclusion)
-* [Works Cited](#works-cited)
+**[Design](#design)**<br>
+**[Implementation](#implementation)**<br>
+**[Final Product](#final-product)**<br>
+**[Challenges/issues](#challengesissues)**<br>
+**[Conclusion](#conclusion)**<br>
+**[Works Cited](#works-cited)**<br>
 
 ## Project Introduction
 ## Design

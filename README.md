@@ -14,19 +14,19 @@
 
 
 
-## Table of Contents
-* Project introduction
+### Table of Contents
+**[Project Introduction](#project-introduction)**<br>
 * Design
 * Implementation
-* Final product
+* Final Product
 * Challenges/issues
 * Conclusion
-* Works cited
+* Works Cited
 
-## Project introduction
+## Project Introduction
 ## Design
 ## Implementation
-## Final product
+## Final Product
 ## Challenges/issues
 ## Conclusion
-## Works cited
+## Works Cited

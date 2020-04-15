@@ -46,3 +46,9 @@ The second component to our design is a LoRa base station which will be located 
 ## Challenges/issues
 ## Conclusion
 ## Works Cited
+
+**[Adafruit Feather M0 RFM69HCW Hookup Guide](https://learn.adafruit.com/adafruit-feather-m0-radio-with-rfm69-packet-radio)**<br>
+**[Bosch BME280 Datasheet (pages 23-31)](https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST-BME280-DS002.pdf)**<br>
+**[Adafruit Radiohead LoRa Arduino Library](https://github.com/adafruit/RadioHead)**<br>
+**[Arduino MQTT Library](https://github.com/knolleary/pubsubclient)**<br>
+**[Arduino ESP8266 Core Library](https://github.com/esp8266/Arduino)**<br>

@@ -6,11 +6,10 @@
 ## LoRa Environmental Sensor & Base Station
 ### Created by: Brian Egolf (‘21) & Owen Hardy (‘22)
 
-<p float="center">
-  <img src="/images/Cover%20header.jpg" width="400" img align="center"/>
-  <img src="/images/Vertical%20spacer.jpg" width="65" height="430" img align="center"/>
-  <img src="/images/wiring%20diagram.jpg" width="400" img align="center"/> 
+<p align="center">
+  <img height="500" src="/images/Cover%20header.jpg">
 </p>
+
 
 ## Table of Contents
 **[Project Introduction](#project-introduction)**<br>

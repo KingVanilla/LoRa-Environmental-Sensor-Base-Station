@@ -7,9 +7,13 @@
 ### Created by: Brian Egolf (‘21) & Owen Hardy (‘22)
 
 <br>
-<p align="center">
+<p align="left">
   <img width="292" height="436" src="/images/Cover%20header.jpg">
 </p>
+<p align="right">
+  <img width="280" height="342" src="/images/Wiring%20diagram.jpg">
+</p>
+
 
 ## Table of Contents
 **[Project Introduction](#project-introduction)**<br>

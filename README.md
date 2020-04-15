@@ -36,11 +36,16 @@ The second component to our design is a LoRa base station which will be located 
 
 <img align="right" height="150" src="/images/nodemcu.jpg"> Interfacing the LoRa network with MQTT would require passing LoRa data packets.  We already had a LoRa radio, and we decided to use an [ESP8266 NodeMCU](https://nodemcu.readthedocs.io/en/master/) for our WiFi interface.  The reason we went with this option is because they're cheap, widely available, Arduino-compatible, and we have expereince using them.  The LoRa radio would simply listen for new data to be pushed on to the network and the NodeMCU would wait for incoming LoRa data packets and push them out on MQTT over WiFi.
 
-## Design
 <br>
+
+## Design
 <img align="right" img height="400" src="/images/wiring%20diagram.jpg"> Connecting all of our sensors together was relatively straight forward.  Our BME280 temperature and humidty sensor communications via I<sup>2</sup>C.  Our PIR sensor simply had a digital output that was active <i>HIGH</i>.  Our pushbutton was wired to a digital input that was connected to a pullup resistor on the ARM MCU through software.  Our photocell was connected to an analog input and a 10k voltage divider.  Lastly our battery monitor was connected to the Feather's <i>"BATT"</i> pin which exposed the raw battery voltage.  This was connected to an anlog input via a dual 100k voltage divider as detailed on the Adafruit hookup guide for the Feather.  A votlage divider is required here because the LiPo's battery voltage can reach a maximum of 4.2V which is too high for the Feather which can only handle a maximum of 3.3V.  The voltage devider will half the apparent voltage of the battery so the highest analog voltage the Feather will see is 2.2V.
 
+<br>
+
 Our LoRa to WiFi base station only had power.
+
+<br>
 
 ## Implementation
 

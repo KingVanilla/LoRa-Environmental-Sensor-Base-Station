@@ -46,10 +46,10 @@ The second component to our design is a LoRa base station which will be located 
 
 <br><br>
 
-### LoRa to WiFi Base Station <img align="right" img height="400" src="/images/Lora%20to%20WiFi%20Base%20Station.jpg">
-Our LoRa to WiFi base station was the most simple part of our solution.  It simply had to relay data from the LoRa radio to the NodeMCU so that it could be transmit to the proper MQTT channel.  
+### LoRa to WiFi Base Station <img align="right" img height="350" src="/images/Lora%20to%20WiFi%20Base%20Station.jpg">
+Our LoRa to WiFi base station was the most simple part of our solution.  It simply had to relay data from the LoRa radio to the NodeMCU so that it could be transmit to the proper MQTT channel.  This will be communicated across a Serial line for simplicity.
 
-<br>
+<br><br><br><br><br><br><br><br>
 
 ## Implementation
 

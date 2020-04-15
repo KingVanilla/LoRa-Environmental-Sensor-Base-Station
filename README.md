@@ -42,14 +42,17 @@ The second component to our design is a LoRa base station which will be located 
 
 ## Design
 ### Sensor Module <img align="right" img height="400" src="/images/wiring%20diagram.jpg">
- Connecting all of our sensors together was relatively straight forward.  Our BME280 temperature and humidty sensor communications via I<sup>2</sup>C.  Our PIR sensor simply had a digital output that was active <i>HIGH</i>.  Our pushbutton was wired to a digital input that was connected to a pullup resistor on the ARM MCU through software.  Our photocell was connected to an analog input and a 10k voltage divider.  Lastly our battery monitor was connected to the Feather's <i>"BATT"</i> pin which exposed the raw battery voltage.  This was connected to an anlog input via a dual 100k voltage divider as detailed on the Adafruit hookup guide for the Feather.  A votlage divider is required here because the LiPo's battery voltage can reach a maximum of 4.2V which is too high for the Feather which can only handle a maximum of 3.3V.  The voltage devider will half the apparent voltage of the battery so the highest analog voltage the Feather will see is 2.2V.
+Connecting all of our sensors together was relatively straight forward.  Our BME280 temperature and humidty sensor communications via I<sup>2</sup>C.  Our PIR sensor simply had a digital output that was active <i>HIGH</i>.  Our pushbutton was wired to a digital input that was connected to a pullup resistor on the ARM MCU through software.  Our photocell was connected to an analog input and a 10k voltage divider.  Lastly our battery monitor was connected to the Feather's <i>"BATT"</i> pin which exposed the raw battery voltage.  This was connected to an anlog input via a dual 100k voltage divider as detailed on the Adafruit hookup guide for the Feather.  A votlage divider is required here because the LiPo's battery voltage can reach a maximum of 4.2V which is too high for the Feather which can only handle a maximum of 3.3V.  The voltage devider will half the apparent voltage of the battery so the highest analog voltage the Feather will see is 2.2V.
 
-<br><br>
+As for the software, we wanted the device to operate in a very specific way to conserve as much power as possible.  We wanted the MCU to be in a deep sleep mode most of the time.  The MCU would come out of sleep only under the following conditions.  (1) The pushbutton has been pressed. (2) Motion has been detected for the first time in over 10 minutes. (3) 10 minutes have passed without a wake cycle from either the PIR sensor or pushbutton.
+
 
 ### LoRa to WiFi Base Station <img align="right" img height="350" src="/images/Lora%20to%20WiFi%20Base%20Station.jpg">
 Our LoRa to WiFi base station was the most simple part of our solution.  It simply had to relay data from the LoRa radio to the NodeMCU so that it could be transmit to the proper MQTT channel.  This will be communicated across a Serial line for simplicity.
 
 <br><br><br><br><br><br><br><br>
+
+
 
 ## Implementation
 

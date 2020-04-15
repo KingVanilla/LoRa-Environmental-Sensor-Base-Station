@@ -7,9 +7,9 @@
 ### Created by: Brian Egolf (‘21) & Owen Hardy (‘22)
 
 <p float="center">
-  <img src="/images/Cover%20header.jpg" width="400" />
-  <img src="/images/Vertical%20spacer.jpg" width="65" />
-  <img src="/images/Wiring%20diagram.jpg" width="400" /> 
+  <img src="/images/Cover%20header.jpg" width="400" img align="center"/>
+  <img src="/images/Vertical%20spacer.jpg" width="65" height="430" img align="center"/>
+  <img src="/images/Wiring%20diagram.jpg" width="400" img align="center"/> 
 </p>
 
 

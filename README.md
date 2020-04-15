@@ -15,7 +15,6 @@
 **[Design](#design)**<br>
 **[Implementation](#implementation)**<br>
 **[Final Product](#final-product)**<br>
-**[Challenges/issues](#challengesissues)**<br>
 **[Conclusion](#conclusion)**<br>
 **[Works Cited](#works-cited)**<br>
 
@@ -59,9 +58,9 @@ Our LoRa to WiFi base station was the most simple part of our solution.  It simp
 
 ## Final Product
 
-## Challenges/issues
-
 ## Conclusion
+
+### Challenges/issues
 
 ## Works Cited
 **[Adafruit Feather M0 RFM69HCW Hookup Guide](https://learn.adafruit.com/adafruit-feather-m0-radio-with-rfm69-packet-radio)**<br>

@@ -10,9 +10,12 @@
 <p align="left">
   <img width="292" height="436" src="/images/Cover%20header.jpg">
 </p>
-<p align="right">
-  <img width="280" height="342" src="/images/Wiring%20diagram.jpg">
+
+<p float="left">
+  <img src="/images/Cover%20header.jpg" width="100" />
+  <img src="/images/Wiring%20diagram.jpg" width="100" /> 
 </p>
+
 
 
 ## Table of Contents

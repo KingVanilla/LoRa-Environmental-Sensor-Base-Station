@@ -11,14 +11,14 @@
 </p>
 
 ## Table of Contents
-**[Project Introduction](#project-introduction)**<br>
+**[Introduction](#introduction)**<br>
 **[Design](#design)**<br>
 **[Implementation](#implementation)**<br>
-**[Final Product](#final-product)**<br>
+**[Results](#results)**<br>
 **[Conclusion](#conclusion)**<br>
 **[Works Cited](#works-cited)**<br>
 
-## Project Introduction
+## Introduction
 Being passionate about DIY home automation solutions, we wanted to create some sort of a room environmental sensor that could trigger different actions within a home automation sensor.  A temperature sensor could signify the heating system to activate if one room becomes colder than the heating system thinks.  A light sensor could signify that a light should turn on.  A motion sensor could signify that a room is occupied and a light should turn on.
 
 Although these sorts of "multi-sensor" solutions already exist, we couldn't find one that would suit our needs.  We wanted a solution that was <b>battery powered</b> but also <b>cost-effective</b>.  The cost-effective part ruled out many pre-existing solutions since many of those operate on a proprietary communication protocol called Z-Wave.  Z-Wave is a commonly used protocol in battery-powered home automation devices since it is low power draw, however, it's expensive to prototype and license these devices.  We thought that we could create a solution that worked with existing home automation systems while keeping the device low cost while also battery powered.
@@ -56,7 +56,7 @@ Our LoRa to WiFi base station was the most simple part of our solution.  It simp
 
 ## Implementation
 
-## Final Product
+## Results
 
 ## Conclusion
 

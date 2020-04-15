@@ -33,7 +33,7 @@ Now that we had our MCU picked out, we were able to pick our sensors that we wou
 The second component to our design is a LoRa base station which will be located at some nearby location.  The purpose of this device is to communicate any data on the LoRa network to the home automation system.  This would be accomplished through a pre-established communication system within the home automation network.  Owen already had a home automation system setup at his house called [OpenHAB](https://www.openhab.org/).  It runs on a Raspberry Pi on his local Internet network.  OpenHAB supports a lightweight communnication protocal called [MQTT](https://www.openhab.org/addons/bindings/mqtt/).  An instance of a [Mosquitto MQTT broker](https://mosquitto.org/) runs on the same Raspberry Pi.  OpenHAB interfaces with the MQTT broker and monitors so called <b>inbound channels</b> for <b>messages</b> which can contain different sensor data and information.  OpenHAB is able to respond to the information within the messages to execute different functions on other components of the home automation.  This is also controlled through MQTT by publishing messagges on different <b>outbound channels</b>.  Each device on the home automation network has its own unique channel that it listens and responds to.  An example flowchart of how a lamp would be turned on is below.
 
 <p align="center">
-  <img width="2500" src="/images/OpenHAB%20command%20flow%20diagram.jpg">
+  <img width="2500" src="">
 </p>
 
 

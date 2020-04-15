@@ -59,8 +59,6 @@ Our LoRa to WiFi base station was the most simple part of our solution.  It simp
 
 ## Final Product
 
-<video src="video.mp4" width="320" height="200" controls preload></video>
-
 ## Challenges/issues
 
 ## Conclusion

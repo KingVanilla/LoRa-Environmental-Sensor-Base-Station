@@ -37,6 +37,10 @@ The second component to our design is a LoRa base station which will be located 
 
 
 ## Design
+<p align="center">
+  <img height="500" src="/images/wiring%20diagram.jpg">
+</p>
+
 ## Implementation
 ## Final Product
 ## Challenges/issues

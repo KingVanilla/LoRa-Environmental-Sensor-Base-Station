@@ -2,7 +2,7 @@
   <img height="110" src="/images/Miami%20Header.jpg">
 </p>
 
-# ECE387 Project 2 Report - Spring 2020
+# ECE387 Embeded Systems Project 2 Report - Spring 2020
 ## LoRa Environmental Sensor & Base Station
 ### Created by: Brian Egolf (‘21) & Owen Hardy (‘22)
 

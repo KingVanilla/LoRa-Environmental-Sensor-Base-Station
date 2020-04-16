@@ -114,7 +114,17 @@ At this point, we are able to see our sensor readings on the OpenHAB interface.
 
 ### Deep Sleep
 We wanted to implement the sleep functionality of the sensor module last because we wanted to have all of the other parts working correctly.
+
+<br>
+
 ## Results
+<p align="center">
+  <img height="200" src="/images/OpenHAB%20web%20UI.png">
+</p>
+
+[![Demo video](https://img.youtube.com/vi/dDnylpt9B8I/0.jpg)](https://www.youtube.com/watch?v=dDnylpt9B8I) 
+
+<br>
 
 ## Conclusion
 

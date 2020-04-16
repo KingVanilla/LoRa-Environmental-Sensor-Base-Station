@@ -41,9 +41,9 @@ The second component to our design is a LoRa base station which will be located 
 
 ## Design
 ### Sensor Module <img align="right" img height="400" src="/images/wiring%20diagram.jpg">
-Connecting all of our sensors together was relatively straight forward.  Our BME280 temperature and humidity sensor communications via I<sup>2</sup>C.  Our PIR sensor simply had a digital output that was active <i>HIGH</i>.  Our pushbutton was wired to a digital input that was connected to a pullup resistor on the ARM MCU through software.  Our photocell was connected to an analog input and a 10k voltage divider.  Lastly, our battery monitor was connected to the Feather's <i>"BATT"</i> pin which exposed the raw battery voltage.  This was connected to an analog input via a dual 100k voltage divider as detailed on the Adafruit hookup guide for the Feather.  A voltage divider is required here because the LiPo's battery voltage can reach a maximum of 4.2V which is too high for the Feather which can only handle a maximum of 3.3V.  The voltage divider will half the apparent voltage of the battery so the highest analog voltage the Feather will see is 2.2V.
+Connecting all of our sensors together was relatively straight forward.  Our BME280 temperature and humidity sensor communications via I<sup>2</sup>C.  Our PIR sensor simply had a digital output that was active `HIGH`.  Our pushbutton was wired to a digital input that was connected to a pullup resistor on the ARM MCU through software.  Our photocell was connected to an analog input and a 10k voltage divider.  Lastly, our battery monitor was connected to the Feather's `"BATT"` pin which exposed the raw battery voltage.  This was connected to an analog input via a dual 100k voltage divider as detailed on the Adafruit hookup guide for the Feather.  A voltage divider is required here because the LiPo's battery voltage can reach a maximum of 4.2V which is too high for the Feather which can only handle a maximum of 3.3V.  The voltage divider will half the apparent voltage of the battery so the highest analog voltage the Feather will see is 2.2V.
 
-As for the software, we wanted the device to operate in a very specific way to conserve as much power as possible.  We wanted the MCU to be in a deep sleep mode most of the time.  The MCU would come out of sleep only under the following conditions.  (1) The pushbutton has been pressed. (2) Motion has been detected for the first time in over 10 minutes. (3) 10 minutes have passed without a wake cycle from either the PIR sensor or pushbutton.  We mustn't come out of sleep every time the PIR sensor outputs <i>HIGH</i> because then the MCU may be on for minutes at a time when there are many guests in the room or when someone is up and moving around.  We assume that the room is unoccupied if there has been no motion for 10 minutes.  When the device does come out of sleep, we turn on our sensors and LoRa radio, take data readings, transmit them over LoRa, and then return to deep sleep.
+As for the software, we wanted the device to operate in a very specific way to conserve as much power as possible.  We wanted the MCU to be in a deep sleep mode most of the time.  The MCU would come out of sleep only under the following conditions.  (1) The pushbutton has been pressed. (2) Motion has been detected for the first time in over 10 minutes. (3) 10 minutes have passed without a wake cycle from either the PIR sensor or pushbutton.  We mustn't come out of sleep every time the PIR sensor outputs `HIGH` because then the MCU may be on for minutes at a time when there are many guests in the room or when someone is up and moving around.  We assume that the room is unoccupied if there has been no motion for 10 minutes.  When the device does come out of sleep, we turn on our sensors and LoRa radio, take data readings, transmit them over LoRa, and then return to deep sleep.
 
 <p align="center">
   <img height="200" src="/images/FSM.jpg">
@@ -55,6 +55,30 @@ Our LoRa to WiFi base station was the most simple part of our solution.  It simp
 <br><br><br><br><br><br><br><br>
 
 ## Implementation
+### Sensor Integration
+The first part of our software consisted of integrating all of our sensors.  We specifically started with the BME280 temeperature and humidity sensor since our instructor wanted us to create this code from scratch without using a library.  We started off by jumping right into the information in the datasheet.  You should have been able to read from the `"id"` register to see if you had the chip connected properly.  We initally couldn't get a reading from this and thought that we weren't able to read and write on our I<sup>2</sup>C bus correctly.  Eventually we downloaded the Adafruit BME280 just to test the part and sure enough we had no luck with that library.  We figured the part was DoA and ordered a replacement.  Unfortunately this happened right at the start of the COVID-19 pandemic so it we had to wait a while on shipping.  We ordered extra this time just in case.  We were able to read back the correct `0x60` chip ID with our new part.  Next we moved on to setting the configuration registers.  These set things like oversampling correction, filters, and standby times.  This was relativley easy, all we had to do was implement the instructions from the datasheet into Arduino code which involved reading, writing, and shifting various bits and registers.  The way that we tested we set our configuration parameters correctly was by using a part of a pre-existing libraries for the device to read the temperature.  We knew that if we got a temperature reading back we had sucessfully implemented configurating the device's parameters.  Once we got that working, we moved on the creating the code for reading the temperature and humidty.  This involved reading from various registers and shifting the bits.  Again, this was detailed in the datasheet and was identicle for both the temperature and humidity except for the register addresses.  This part of the software was by far the most challenging part of the project which is why we wanted to tackle it first that way we could come up with a backup plan if we had unresolvable issues.
+
+The software for remaining sensors we had to integrate was quite simple.  All of our sensor readings were analog/digital readings implemented with a simple `analogRead` or `digitalRead`.  For debugging purposes, we printed these values out to the Serial Monitor.  Once we could see all of our sensor data printing to the Serial Monitor, we decided it would be best to compile all of the data into a data packet that is fixed in length and has data points in the same recurring positions.  This would make it easy to parse and segregate the data before we published each value to its own MQTT topic.  We define a unique ID to each LoRa client on the network so that we can identify and publish to unique MQTT topics.  We constrained all of our data values to a fixed length of 1, 2, or 4 characters depending on the data point so their position indicies are fixed in space.  Below is how the data packet is structured.
+
+```
+Data packet structure: "xx,xxxx,xxxx,xx,x,x,xx"
+
+Index position:
+id       = [0,1]
+temp     = [3,4,5,6]
+humidity = [8,9,10,11]
+lux      = [13,14]
+motion   = [16]
+button   = [18]
+battery  = [20,21]
+```
+ 
+### LoRa Communication
+We wanted to get our LoRa network working independently before sending any sensor data to make it as easy as possible to debug.  We first used the example sketches provided in the Adafruit Radiohead library.  One LoRa radio was setup as the base station and the other was setup as a client.  We simply sent `"Hello"` as our data packet every 2 seconds.  We had our client connected to power sending this data packet and blinking its onboard `LED` upon packet transmission so we could have a visual indicator.  Our base station was connected to our Arduino Serial Monitor so we could see the incomming data transmissions.  As expected, we recieved a `"Hello"` every 2 seconds.
+
+Once we had our LoRa radios communicating properly, we started transmitting our constructed data packet which worked as expected.
+
+### LoRa to WiFi Translation
 
 ## Results
 

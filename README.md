@@ -119,7 +119,7 @@ We wanted to implement the sleep functionality of the sensor module last because
 
 ## Results
 <p align="center">
-  <img height="200" src="/images/OpenHAB%20web%20UI.png">
+  <img height="225" src="/images/OpenHAB%20web%20UI.png">
 </p>
 
 [![Demo video](https://img.youtube.com/vi/dDnylpt9B8I/0.jpg)](https://www.youtube.com/watch?v=dDnylpt9B8I) 
@@ -136,4 +136,4 @@ We wanted to implement the sleep functionality of the sensor module last because
 **[Adafruit Radiohead LoRa Arduino Library](https://github.com/adafruit/RadioHead)**<br>
 **[Arduino MQTT Library](https://github.com/knolleary/pubsubclient)**<br>
 **[Arduino ESP8266 Core Library](https://github.com/esp8266/Arduino)**<br>
-**Visual aids and diagrams made using [Creatley](https://creately.com/)**<br>
+**Visual aids and diagrams made using [Creately](https://creately.com/)**<br>

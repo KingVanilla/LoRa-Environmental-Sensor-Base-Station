@@ -99,19 +99,21 @@ This 24-bit long packet is sent over Serial from the LoRa MCU to the NodeMCU.  O
 
 ```
 Data packet: "02,70.1,43,07,1,0,99,-32"
-Publish on topic: "/home/LoRa/module02/temperature" "70.1"
-Publish on topic: "/home/LoRa/module02/humidity" "43"
-Publish on topic: "/home/LoRa/module02/lux" "07"
-Publish on topic: "/home/LoRa/module02/motion" "1"
-Publish on topic: "/home/LoRa/module02/button" "0"
-Publish on topic: "/home/LoRa/module02/battery" "99"
-Publish on topic: "/home/LoRa/module02/rssi" "-32"
+Publish on topic: "/home/LoRa/node02/temperature" "70.1"
+Publish on topic: "/home/LoRa/node02/humidity" "43"
+Publish on topic: "/home/LoRa/node02/lux" "07"
+Publish on topic: "/home/LoRa/node02/motion" "1"
+Publish on topic: "/home/LoRa/node02/button" "0"
+Publish on topic: "/home/LoRa/node02/battery" "99"
+Publish on topic: "/home/LoRa/node02/rssi" "-32"
 ```
 
-Once the sensor data has been published to MQTT, the home automation server can react to these updates and trigger various automations depending upon how it's configured to do so.  The beauty is that OpenHAB can pool information from hundreds of different devices and services together into a cohesive system.  Take the following scenario as an example.  We have a sensor module located in the kitchen of a 2-story home.  The sensor module awakes from sleep due to new motion.  OpenHAB recognizes this new update to the MQTT topic.  It also sees that the newest light level was `00` which is absolute darkness.  OpenHAB recognizes that the time is 2 AM.  This must mean that someone has come into the kitchen during the night.  At this point, OpenHAB could trigger the kitchen lights to come on for better visibility.  OpenHAB can also track data over time.  For example, we see that the humidity inside a room is above `80` for an extended period of time.  We might want to alert the homeowner or activate a dehumidifier.  The user is able to configure OpenHAB to respond with whatever action they desire.
+<img align="left" img width="250" src="/images/OpenHAB%20sensor%20readings.jpg">Once the sensor data has been published to MQTT, the home automation server can react to these updates and trigger various automations depending upon how it's configured to do so.  The beauty is that OpenHAB can pool information from hundreds of different devices and services together into a cohesive system.  Take the following scenario as an example.  We have a sensor module located in the kitchen of a 2-story home.  The sensor module awakes from sleep due to new motion.  OpenHAB recognizes this new update to the MQTT topic.  It also sees that the newest light level was `00` which is absolute darkness.  OpenHAB recognizes that the time is 2 AM.  This must mean that someone has come into the kitchen during the night.  At this point, OpenHAB could trigger the kitchen lights to come on for better visibility.  OpenHAB can also track data over time.  For example, we see that the humidity inside a room is above `80` for an extended period of time.  We might want to alert the homeowner or activate a dehumidifier.  The user is able to configure OpenHAB to respond with whatever action they desire.
+
+At this point, we are able to see our sensor readings on the OpenHAB interface.
 
 ### Deep Sleep
-
+We wanted to implement the sleep functionality of the sensor module last because we wanted to have all of the other parts working correctly.
 ## Results
 
 ## Conclusion

@@ -127,8 +127,11 @@ We wanted to implement the sleep functionality of the sensor module last because
 <br>
 
 ## Conclusion
+Discuss next time using just a LoRa radio module instead of an entire feather
 
 ### Challenges/issues
+
+<br>
 
 ## Works Cited
 **[Adafruit Feather M0 RFM69HCW Hookup Guide](https://learn.adafruit.com/adafruit-feather-m0-radio-with-rfm69-packet-radio)**<br>

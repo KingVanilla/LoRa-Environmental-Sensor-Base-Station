@@ -122,7 +122,7 @@ We wanted to implement the sleep functionality of the sensor module last because
   <img height="225" src="/images/OpenHAB%20web%20UI.png">
 </p>
 
-[![Demo video](https://img.youtube.com/vi/LH8b3mwinaE/0.jpg)](https://www.youtube.com/watch?v=LH8b3mwinaE) 
+[![Demo video](/images/Thumbnail.png)](https://www.youtube.com/watch?v=LH8b3mwinaE) 
 
 <br>
 

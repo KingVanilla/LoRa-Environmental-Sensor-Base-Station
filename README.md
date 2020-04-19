@@ -14,7 +14,7 @@
 **[Introduction](#introduction)**<br>
 **[Design](#design)**<br>
 **[Implementation](#implementation)**<br>
-**[Results](#results)**<br>
+**[Results/Demo](#resultsdemo)**<br>
 **[Conclusion](#conclusion)**<br>
 **[Works Cited](#works-cited)**<br>
 

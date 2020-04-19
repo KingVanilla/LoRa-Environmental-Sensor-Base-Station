@@ -117,7 +117,7 @@ We wanted to implement the sleep functionality of the sensor module last because
 
 <br>
 
-## Results
+## Results/Demo
 <p align="center">
   <img height="225" src="/images/OpenHAB%20web%20UI.png">
 </p>
